@@ -1,0 +1,41 @@
+div:first-of-type {
+/* background-color: red; */
+}
+
+.personalDetails,
+.educationDetails,
+.experienceDetails {
+  width: 100%;
+  background-color: seashell;
+  padding: 3px;
+}
+
+.personalDetails {
+  background-color: darkgray;
+}
+
+.personalDetails ul {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.personalDetails ul li {
+  list-style: none;
+}
+.personalDetails ul li:nth-child(odd) {
+  color: rgb(255, 251, 251);
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+h2 {
+  background-color: seagreen;
+}
+
+.boxHolder {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import Card from './components/Card';
+import { useState } from 'react';
+import './App.css';
+import PersonalDetails from './components/PersonalDetails';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import CvDisplay from './components/CvDisplay';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [personalData, setPersonalData] = useState({
+    details: [
+      'Dennis Otieno',
+      'otidennis98@gmail.com',
+      '+254729230016',
+      'Babadogo, Ruaraka',
+    ],
+  });
+  const [educationData, setEducationData] = useState({
+    education: [
+      'Moi University',
+      'Agricultural Economics and Resource Management',
+      2015,
+      2019,
+      'Eldoret, Kenya',
+    ],
+  });
+  const [experienceData, setExperienceData] = useState({
+    experience: [
+      2020,
+      2024,
+      'Google Inc.',
+      'Lead Software Engineer',
+      'Silicon Valley, USA',
+      'Guided and drove the technical aspects of projects from conception to deployment. Engaged my tech team nurturing their expertise in software engineering principles and leadership skills for successful delivery of high quality and scalable software solutions.',
+    ],
+  });
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <form>
+        <PersonalDetails
+          setPersonalData={setPersonalData}
+          data={personalData}
+        />
+        <Education setEducationData={setEducationData} data={educationData} />
+        <Experience
+          setExperienceData={setExperienceData}
+          data={experienceData}
+        />
+
+      </form>
+
+      <CvDisplay data={[personalData, educationData, experienceData]} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

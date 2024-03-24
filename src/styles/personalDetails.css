@@ -1,0 +1,11 @@
+.personal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 5px;
+}
+
+.personal-details input {
+    border-radius: 5px;
+    width: 150px;
+}
